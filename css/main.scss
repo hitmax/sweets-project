@@ -2,3 +2,22 @@ html {
   font: 16px/1 'Times New Roman' serif;
 }
 
+header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  padding: 20px;
+  .cart {
+    border: 1px solid black;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  .item {
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: 10px;
+  }
+}

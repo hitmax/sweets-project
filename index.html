@@ -6,8 +6,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<header>
+    <div class="cart">
+        <a href="javascript:void(0);" class="reset-cart">reset</a>
+        <h1>cart</h1>
+        <span class="total-price">0</span>
+        <em>$</em>
+        <span class="total-qty">0</span>
+        <em>pc</em>
+        <span class="group-qty"></span>
+
+    </div>
+</header>
+<main>
+    <div class="item" data-id="1">
+        <span class="price">100$</span>
+        <input type="number" min="1" value="1">
+        <a href="javascript:void(0);" class="add-to-cart">Add to cart</a>
+    </div>
+    <div class="item" data-id="2">
+        <span class="price">50$</span>
+        <input type="number" min="1" value="1">
+        <a href="javascript:void(0);" class="add-to-cart">Add to cart</a>
+    </div>
+    <div class="item" data-id="3">
+        <span class="price">200$</span>
+        <input type="number" min="1" value="1">
+        <a href="javascript:void(0);" class="add-to-cart">Add to cart</a>
+    </div>
+    <div class="item" data-id="4">
+        <span class="price">300$</span>
+        <input type="number" min="1" value="1">
+        <a href="javascript:void(0);" class="add-to-cart">Add to cart</a>
+    </div>
+</main>
 
 <script src="js/app.js" defer></script>
 </body>

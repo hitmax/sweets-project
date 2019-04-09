@@ -56,6 +56,7 @@ body {
 
 
 header {
+  height: 10vh;
   .navbar-brand {
     @include fontPacifico(3em);
 
@@ -95,9 +96,35 @@ header {
 
 .hero-section {
   background: url("../img/hero_cake.png") right no-repeat;
-  height: 941px;
+  background-size: contain;
+  height: 90vh;
 
   button {
     @include bigRedButton;
+    margin: 3em 0;
+  }
+
+  .flex-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+
+  .description {
+    max-width: 50%;
+    .natural-ingredients, .free-delivery {
+      display: inline-flex;
+      width: 45%;
+      i {
+        font-size: 3em;
+        color: $colorCoral;
+      }
+      div {
+        margin-left: 1em;
+      }
+    }
   }
 }

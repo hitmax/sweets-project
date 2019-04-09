@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Philosopher:400,700|Playfair+Display:400,700&subset=cyrillic');
+@import "../css/bootstrap.min.css";
+
+@mixin fontPlayfair($fontSize, $fontWeight) {
+  font-family: 'Playfair Display', serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin fontPacifico($fontSize) {
+  font-family: 'Pacifico', cursive;
+  font-size: $fontSize;
+}
+
+@mixin fontPhilosopher($fontSize, $fontWeight) {
+  font-family: 'Philosopher', sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin bigRedButton {
+  min-height: 3em;
+  min-width: 12em;
+  background-color: $colorCoral;
+  border-radius: 3em;
+  border: none;
+  box-shadow: 0 2px 0.5em $textColorDarkPink;
+  color: $colorPink;
+  text-transform: uppercase;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+$textColorDark: #2e2829;
+$textColorDarkPink: #c7003b;
+$colorCoral: #f50049;
+$colorPink: #fbebea;
+
+
+body {
+  background-color: $colorPink;
+  @include fontPhilosopher(1em, 400);
+
+  h1 {
+    font-size: 5em;
+    font-weight: 700;
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+    @include fontPacifico(2.5em)
+  }
+}
+
+
+header {
+  .navbar-brand {
+    @include fontPacifico(3em);
+
+    &:hover {
+      color: $textColorDarkPink !important;
+    }
+  }
+
+  .nav-item {
+    align-items: center;
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0.75em;
+    padding: 0 !important;
+    box-sizing: content-box;
+    font-weight: 700;
+
+    &:hover {
+      color: $textColorDarkPink;
+      border-bottom: 1px solid $textColorDarkPink;
+    }
+
+    @media screen and (max-width: 1199px) {
+      font-size: 0.8em;
+    }
+  }
+
+  .phone-number {
+    font-size: 1.5em;
+    color: $textColorDarkPink;
+  }
+
+}
+
+.hero-section {
+  background: url("../img/hero_cake.png") right no-repeat;
+  height: 941px;
+
+  button {
+    @include bigRedButton;
+  }
+}

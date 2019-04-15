@@ -21,12 +21,13 @@ const tinypng = require('gulp-tinypng');
 
 
 const jsFiles =[
+    './src/js/slick.min.js',
     './src/js/main.js'
-    // './src/js/lib.js'
 ];
 
 function styles() {
-    return gulp.src('./src/sass/**/*.+(sass|scss)')
+    // return gulp.src('./src/sass/**/*.+(sass|scss)')
+    return gulp.src('./src/sass/**/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(concat('style.css'))

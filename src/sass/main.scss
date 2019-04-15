@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Philosopher:400,700|Playfair+Display:400,700&subset=cyrillic');
 @import "../css/bootstrap.min.css";
+@import "../sass/slick";
+//@import "../sass/slick-theme";
+@import "../sass/slick-slider-styles";
 
 @mixin fontPlayfair($fontSize, $fontWeight) {
   font-family: 'Playfair Display', serif;
@@ -24,6 +27,7 @@
   background-color: $colorCoral;
   border-radius: 3em;
   border: none;
+  outline: none;
   box-shadow: 0 2px 0.5em $textColorDarkPink;
   color: $colorPink;
   text-transform: uppercase;
@@ -46,24 +50,22 @@ body {
   }
 
   h2 {
-
+    font-size: 3em;
+    font-weight: 700;
   }
 
   h3 {
     @include fontPacifico(2.5em)
+  }
+
+  h4 {
+    font-size: 2em;
   }
 }
 
 
 header {
   height: 10vh;
-  .navbar-brand {
-    @include fontPacifico(3em);
-
-    &:hover {
-      color: $textColorDarkPink !important;
-    }
-  }
 
   .nav-item {
     align-items: center;
@@ -86,12 +88,20 @@ header {
       font-size: 0.8em;
     }
   }
+}
 
-  .phone-number {
-    font-size: 1.5em;
-    color: $textColorDarkPink;
+.navbar-brand {
+  @include fontPacifico(3em);
+  color: $textColorDark;
+
+  &:hover {
+    color: $textColorDarkPink !important;
   }
+}
 
+.phone-number {
+  font-size: 1.5em;
+  color: $textColorDarkPink;
 }
 
 .hero-section {
@@ -115,16 +125,412 @@ header {
 
   .description {
     max-width: 50%;
+
     .natural-ingredients, .free-delivery {
       display: inline-flex;
       width: 45%;
+
       i {
         font-size: 3em;
         color: $colorCoral;
       }
+
       div {
         margin-left: 1em;
       }
     }
+  }
+}
+
+#our-cakes {
+  .cake-type-wrapper {
+    position: absolute;
+    margin: 1em;
+  }
+
+  .col-grid {
+    box-sizing: border-box;
+    padding: 15px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    i {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 1em;
+      font-size: 2em;
+      color: $colorCoral;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .first-row, .second-row {
+    //height: 660px;
+    margin-top: 3em;
+
+    .row {
+      //height: 50%;
+    }
+  }
+}
+
+//.classic-cake {
+//  background: url("../img/classic-cake.jpg") no-repeat;
+//
+//}
+//.mousse-cake {
+//  background: url("../img/mousse-cake.jpg") no-repeat;
+//
+//}
+//.wedding-cake {
+//  background: url("../img/wedding-cake.jpg") no-repeat;
+//}
+
+#individual-order {
+  h2 {
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  h3 {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+
+  .select-cake-stuffing-section {
+    position: relative;
+  }
+
+  .cake-stuffing {
+    position: relative;
+    background-color: #fff;
+    padding: 3em 0 3em 2em;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+
+    strong, span {
+      display: block;
+      margin: 0.5em 0;
+      font-size: 1.5em;
+      color: $textColorDarkPink;
+    }
+
+  }
+
+  .stuffing-image {
+    width: 30%;
+    height: 100%;
+  }
+
+  .stuffing-description {
+    width: 30%;
+    margin: auto 2em;
+  }
+
+  .step {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    color: $colorCoral;
+  }
+
+  .select-size-section {
+    position: relative;
+    background-color: #fff;
+    margin-top: 2em;
+    padding: 5em 3em;
+
+    .select-size {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      [class^='cake-size'] {
+        text-align: center;
+
+        p {
+          margin-top: 1em;
+          color: $textColorDarkPink;
+        }
+      }
+    }
+  }
+
+  .select-decorating-section {
+    margin-top: 2em;
+    background: #fff url("../img/bg-decorating.png") no-repeat left center;
+    position: relative;
+
+    .cake-decorating-slider {
+      width: 70%;
+      float: right;
+      margin: 3em 5em;
+
+      .cake-decorating {
+        margin: 0 1em;
+        width: 30%;
+
+        img {
+          width: 100%;
+        }
+
+        .decorating-description {
+          text-align: center;
+          font-size: 1.5em;
+          color: $textColorDarkPink;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: -32px;
+      //@media screen and (max-width: 1280px) {
+      //  left: -1em;
+      //}
+    }
+
+    .slick-next {
+      right: -32px;
+      //@media screen and (max-width: 1280px) {
+      //  right: -1em;
+      //}
+    }
+  }
+
+  .our-choice {
+    margin-top: 2em;
+    background-color: #fff;
+    padding: 5em 2em;
+
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      label {
+        display: block;
+        @include fontPacifico(1.5em);
+        color: $textColorDarkPink;
+      }
+
+      select {
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        border-bottom: 2px solid #333;
+      }
+
+      input[type=submit] {
+        @include bigRedButton;
+      }
+    }
+  }
+}
+
+#reviews {
+  background: url("../img/bg-flags.png") top center no-repeat/contain;
+
+  h2 {
+    padding-top: 2em;
+    text-align: center;
+  }
+
+  h3 {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+
+  .reviews-slider {
+    margin: 3em auto;
+    width: 70%;
+
+    .slick-prev {
+      left: -32px;
+      //@media screen and (max-width: 1280px) {
+      //  left: -1em;
+      //}
+    }
+
+    .slick-next {
+      right: -32px;
+      //@media screen and (max-width: 1280px) {
+      //  right: -1em;
+      //}
+    }
+  }
+
+  .client-review {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      width: 35%;
+      border-radius: 50%;
+    }
+
+    .review-text {
+      width: 50%;
+
+      span {
+        font-size: 1.25em;
+      }
+
+      p {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+#about-us {
+  h2 {
+    text-align: center;
+    margin: 1em auto;
+  }
+
+  h3 {
+    margin: 0.5em 0;
+  }
+
+  h4 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+}
+
+.socials {
+  a {
+    text-decoration: none;
+    outline: none;
+  }
+
+  i {
+    font-size: 2em;
+    color: $textColorDarkPink;
+    margin-right: 0.5em;
+
+    &:before {
+      border: 1px solid $colorCoral;
+      display: block;
+      padding: 0.5em;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+}
+
+.why-choose-us {
+  padding-top: 5em;
+
+  h2, h3 {
+    text-align: center;
+  }
+
+  .content-wrapper {
+
+
+    .content-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      i {
+        font-size: 4em;
+        color: $colorCoral;
+      }
+
+      h4 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+
+      div {
+        max-width: 80%;
+      }
+
+      h3 {
+        text-align: left;
+        margin: 0.5em 0;
+      }
+    }
+  }
+
+  .natural {
+    padding: 20em 0;
+    margin-top: -5em;
+    background: url("../img/natural-ingredients.png") no-repeat left top/contain;
+  }
+
+  .customer-care {
+    padding: 20em 0;
+    margin-top: -10em;
+    background: url("../img/perfect-cake.png") no-repeat right top/contain;
+  }
+}
+
+#how-to-order {
+  background: #e53a3f url("../img/gift.png") left top no-repeat;
+  background-size: cover;
+  padding: 10em 0;
+
+  .how-to-order-wrapper {
+    float: right;
+    max-width: 35%;
+    color: #fff;
+    margin-right: 5em;
+
+    h4:first-letter {
+      @include fontPacifico(2em);
+    }
+  }
+}
+
+#contacts {
+  padding-top: 5em;
+  background: url("../img/bg-form.jpg") right bottom no-repeat;
+
+  .container {
+    padding: 5em 0;
+  }
+
+  .form {
+    form {
+      input:not([type=submit]) {
+        display: block;
+        width: 100%;
+        margin: 2em 0;
+        border: none;
+        border-bottom: 1px solid $textColorDark;
+        background-color: transparent;
+        outline: none;
+      }
+
+      input[type=submit] {
+        @include bigRedButton
+      }
+    }
+  }
+}
+
+footer {
+  background-color: lighten($colorCoral, 40%);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

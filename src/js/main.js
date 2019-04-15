@@ -10,14 +10,14 @@
                 pauseOnFocus: true,
                 pauseOnHover: true,
                 infinite: true,
-                // responsive: [
-                //     {
-                //         breakpoint: 969,
-                //         settings: {
-                //             dots: false,
-                //         }
-                //     }
-                // ]
+                responsive: [
+                    {
+                        breakpoint: 575,
+                        settings: {
+                            arrows: false,
+                        }
+                    }
+                ]
             });
 
         $('.cake-decorating-slider').slick({
@@ -31,14 +31,21 @@
             pauseOnFocus: true,
             pauseOnHover: true,
             infinite: true,
-            // responsive: [
-            //     {
-            //         breakpoint: 969,
-            //         settings: {
-            //             dots: false,
-            //         }
-            //     }
-            // ]
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows: false,
+                    }
+                }
+            ]
         });
         $('.reviews-slider').slick({
             arrows: true,
@@ -49,14 +56,14 @@
             pauseOnFocus: true,
             pauseOnHover: true,
             infinite: true,
-            // responsive: [
-            //     {
-            //         breakpoint: 969,
-            //         settings: {
-            //             dots: false,
-            //         }
-            //     }
-            // ]
+            responsive: [
+                {
+                    breakpoint: 575,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
         });
 
     });

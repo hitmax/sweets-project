@@ -32,10 +32,15 @@ $colorPink: #fbebea;
   border-radius: 3em;
   border: none;
   outline: none;
-  box-shadow: 0 2px 0.5em $textColorDarkPink;
   color: $colorPink;
   text-transform: uppercase;
   font-family: "Comic Sans MS", sans-serif;
+  &:hover {
+    box-shadow: 0 2px 0.5em $textColorDarkPink;
+  }
+  &:active {
+    background-color: $textColorDarkPink;
+  }
 }
 
 
@@ -74,11 +79,27 @@ body {
 }
 
 
-header {
+header.container {
   height: 10vh;
+  padding: 0;
 
   .nav-item {
     align-items: center;
+  }
+  .navbar-collapse{
+    order: 2;
+  }
+  .navbar-toggler {
+    order: 2;
+  }
+  .navbar-collapse.show {
+    order: 4;
+    background-color: $colorPink;
+    border-radius: 1em;
+    border: 1px solid $textColorDarkPink;
+    .nav-item {
+      font-size: 2em;
+    }
   }
 
   .nav-link {
@@ -101,6 +122,7 @@ header {
 }
 
 .navbar-brand {
+  order: 1;
   @include fontPacifico(3em);
   color: $textColorDark;
 
@@ -114,6 +136,10 @@ header {
   color: $textColorDarkPink;
   background-color: rgba(251, 235, 234, 0.7);
   border-radius: 1em;
+  order: 3;
+}
+.navbar-collapse.show +.phone-number {
+  order: 3;
 }
 
 .hero-section {
@@ -213,6 +239,10 @@ header {
 
     img {
       width: 100%;
+
+      &:hover {
+        box-shadow: 1px 1px 16px #b0b2b4;
+      }
     }
   }
 
@@ -508,6 +538,7 @@ header {
   a {
     text-decoration: none;
     outline: none;
+
   }
 
   i {
@@ -516,11 +547,15 @@ header {
     margin-right: 0.5em;
 
     &:before {
-      border: 1px solid $colorCoral;
+      border: 1px solid $textColorDarkPink;
       display: block;
       padding: 0.5em;
       border-radius: 50%;
       background-color: #fff;
+    }
+
+    &:hover:before {
+      background-color: $colorPink;
     }
   }
 }
@@ -664,8 +699,9 @@ header {
   padding-top: 5em;
   background: url("../img/bg-form.jpg") right bottom no-repeat;
   @media screen and (max-width: 1199px) {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url("../img/bg-form.jpg") right bottom no-repeat;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../img/bg-form.jpg") right bottom no-repeat;
   }
+
   .container {
     padding: 5em 0;
   }
@@ -687,6 +723,7 @@ header {
       }
     }
   }
+
   .info {
     margin-top: 1em;
     text-shadow: 1px 1px 2px #fff;
@@ -701,4 +738,9 @@ footer {
     justify-content: space-between;
     align-items: center;
   }
+  .copyrights {
+    order: 2;
+  }
 }
+
+

@@ -2,23 +2,23 @@
     $(function () {
 
         $('.cake-stuffing-slider').slick({
-                arrows: true,
-                fade: false,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                pauseOnFocus: true,
-                pauseOnHover: true,
-                infinite: true,
-                responsive: [
-                    {
-                        breakpoint: 575,
-                        settings: {
-                            arrows: false,
-                        }
+            arrows: true,
+            fade: false,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnFocus: true,
+            pauseOnHover: true,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 575,
+                    settings: {
+                        arrows: false,
                     }
-                ]
-            });
+                }
+            ]
+        });
 
         $('.cake-decorating-slider').slick({
             arrows: true,
@@ -64,6 +64,15 @@
                     }
                 }
             ]
+        });
+
+        var $root = $('html');
+        $('a.anchor').on('click', function () {
+            $root.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+
+            return false;
         });
 
     });
